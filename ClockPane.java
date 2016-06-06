@@ -101,6 +101,13 @@ public class ClockPane extends Pane {
 		Text t3 = new Text(centerX + clockRadius - 10, centerY + 3, "3");
 		Text t4 = new Text(centerX - 3, centerY + clockRadius - 3, "6");
 		Text t5 = new Text(centerX + clockRadius - 55, centerY - 65, "1");
+		Text t6 = new Text(centerX + clockRadius - 25, centerY - 40, "2");
+		Text t7 = new Text(centerX + clockRadius - 25, centerY + 45, "4");
+		Text t8 = new Text(centerX + clockRadius - 60, centerY + 80, "5");
+		Text t9 = new Text(centerX - clockRadius + 50, centerY + 80, "7");
+		Text t10 = new Text(centerX - clockRadius + 20, centerY + 45, "8");
+		Text t11 = new Text(centerX - clockRadius + 20, centerY - 40, "10");
+		Text t12 = new Text(centerX - clockRadius + 50, centerY - 65, "11");
     
 		// Draw second hand
 		double sLength = clockRadius * 0.8;
@@ -130,7 +137,8 @@ public class ClockPane extends Pane {
 		hLine.setStroke(Color.GREEN);
 		
 		getChildren().clear();  
-		getChildren().addAll(circle, t1, t2, t3, t4, sLine, mLine, hLine);
+		getChildren().addAll(circle, t1, t2, t3, t4, sLine, mLine, hLine, t5, 
+		t6, t7, t8, t9, t10, t11, t12);
 	}
   
 	@Override
