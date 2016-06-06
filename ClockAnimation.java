@@ -25,6 +25,22 @@ public class ClockAnimation extends Application{
 	
 	public void start(Stage primaryStage){
 		ClockPane clock = new ClockPane();
+	
+		//set the buttons and add to the pane	
+		Button start = new Button("開始");
+		Button stop = new Button("停止");
+		start.setPrefSize(75,30);
+		stop.setPrefSize(75,30);
+		start.setTranslateX(0);
+		start.setTranslateY(0);
+		stop.setTranslateX(90);
+		stop.setTranslateY(0);
+		
+		HBox box = new HBox(10);
+		BorderPane pane = new BorderPane();
+		box.getChildren().addAll(start, stop);
+		pane.setCenter(clock);
+		pane.setBottom(box);		
 		
 		EventHandler<ActionEvent> eventHandler = e->{
 			clock.setCurrentTime();
@@ -34,6 +50,17 @@ public class ClockAnimation extends Application{
 		animation.setCycleCount(Timeline.INDEFINITE);
 		animation.play();
 		
+		//Set button action(start)
+		start.setOnAction(e -> {
+			//Play animation
+			animation.play();
+		});
+		
+		//Set button action(stop)
+		stop.setOnAction(e -> {
+			//Stop animation
+			animation.stop();
+		});		
 		
 		Scene scene = new Scene(pane,250,250);
 		primaryStage.setTitle("小時鐘");
