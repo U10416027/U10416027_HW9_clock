@@ -24,6 +24,23 @@ import javafx.event.ActionEvent;
 public class ClockAnimation extends Application{
 	
 	public void start(Stage primaryStage){
-	
+		ClockPane clock = new ClockPane();
+		
+		EventHandler<ActionEvent> eventHandler = e->{
+			clock.setCurrentTime();
+		};
+		
+		Timeline animation = new Timeline(new KeyFrame(Duration.millis(1000),eventHandler));
+		animation.setCycleCount(Timeline.INDEFINITE);
+		animation.play();
+		
+		
+		Scene scene = new Scene(pane,250,250);
+		primaryStage.setTitle("小時鐘");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	public static void main (String[] args){
+		launch(args);
 	}
 }
